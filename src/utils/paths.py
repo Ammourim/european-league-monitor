@@ -10,17 +10,17 @@ BRONZE_DIR = DATA_DIR / "bronze"
 SILVER_DIR = DATA_DIR / "silver"
 
 # datasets específicos
+#CAMADA BRONZE
 BRONZE_COMPETITIONS = BRONZE_DIR / "competitions"
+BRONZE_MATCHES = BRONZE_DIR / "matches_by_competition"
+BRONZE_SCORERS = BRONZE_DIR / "scorers_by_competition"
+BRONZE_STANDINGS = BRONZE_DIR / "standings_by_competition"
+BRONZE_TEAMS = BRONZE_DIR / "teams_by_competition"
+#CAMADA SILVER
 SILVER_COMPETITIONS = SILVER_DIR / "competitions"
 
-
-BRONZE_MATCHES = BRONZE_DIR / "matches_by_competition"
-
-
-BRONZE_SCORERS = BRONZE_DIR / "scorers_by_competition"
+#CAMADA GOLD
 
 
-BRONZE_STANDINGS = BRONZE_DIR / "standings_by_competition"
 
 
-BRONZE_TEAMS = BRONZE_DIR / "teams_by_competition"

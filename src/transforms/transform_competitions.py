@@ -1,9 +1,10 @@
 #%%
 import pandas as pd
-import os
 import json
+from pathlib import Path
+from src.utils.paths import BRONZE_COMPETITIONS
 #%%
-with open('../../data/bronze/competitions.json', encoding='utf-8') as competitions:
+with open(BRONZE_COMPETITIONS/'', encoding='utf-8') as competitions:
     dados = json.load(competitions)
 #%%
 df_temporadas = pd.json_normalize(dados['seasons'])

@@ -5,12 +5,15 @@ from pathlib import Path
 from dotenv import load_dotenv
 import json
 import logging
+from src.utils.paths import BRONZE_COMPETITIONS
 
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s')
 
 logger = logging.getLogger(__name__)
+#%%
+
 
 load_dotenv()
 
@@ -20,10 +23,9 @@ headers = { 'X-Auth-Token': API_KEY }
 
 LIGAS = ['PL', 'PD', 'BL1', 'CL', 'FL1', 'SA', 'BSA', 'WC'] 
 
-bronze = Path(__file__) / '..' / '..'/ '..' / 'data' / 'bronze' / 'competitions'
+bronze = BRONZE_COMPETITIONS
 bronze.mkdir(parents=True, exist_ok=True)
 
-print(bronze.resolve())
 
 def extract_league():
     logger.info(f'Extraindo {len(LIGAS)} ligas')
@@ -45,6 +47,6 @@ def extract_league():
         except requests.HTTPError as e:
             logger.error(f'Erro ao extrair liga {liga}: {e}')
         
-        logger.info(f'Extracao finalizada!')
+    logger.info(f'Extracao finalizada!')
 
 extract_league()

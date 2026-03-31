@@ -5,6 +5,9 @@ from pathlib import Path
 from dotenv import load_dotenv
 import json
 import logging
+from src.utils.paths import BRONZE_STANDINGS
+
+
 
 logging.basicConfig(
     level=logging.INFO,
@@ -20,7 +23,7 @@ API_KEY=os.getenv('API_KEY')
 headers = { 'X-Auth-Token': API_KEY }
 
 
-bronze = Path(__file__) / '..' / '..'/ '..' / 'data' / 'bronze' / 'standings'
+bronze = BRONZE_STANDINGS
 bronze.mkdir(parents=True, exist_ok=True)
 
 

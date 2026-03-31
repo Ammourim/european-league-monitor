@@ -6,6 +6,8 @@ from dotenv import load_dotenv
 import json
 import logging
 import time
+from src.utils.paths import BRONZE_MATCHES
+
 
 logging.basicConfig(
     level=logging.INFO,
@@ -21,7 +23,7 @@ API_KEY=os.getenv('API_KEY')
 headers = { 'X-Auth-Token': API_KEY }
 
 
-bronze = Path(__file__) / '..' / '..'/ '..' / 'data' / 'bronze' / 'matches'
+bronze = BRONZE_MATCHES
 bronze.mkdir(parents=True, exist_ok=True)
 
 
